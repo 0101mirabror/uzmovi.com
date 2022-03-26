@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UzMovie.com</title>
+       
+     </head>
+    <body>
+
+        <h1 style="background-color:#0f0f0f; color:#ffffff">{{title}}<h1>
+        <div style="display:flex;  align-items:center; justify-content:between">
+            {% for movie in movies %}
+            <div style="250px">
+                {% if movie.banner %}
+                    <img src="{{movie.banner.url}}" width='250px'/>
+                
+                {% endif %}
+
+                <p>{{movie.title}} <small>({{movie.duration}})</small></p>
+
+            </div>
+            {% endfor %}            
+{% comment %}             
+            {% for img in movie_img %}
+                <img src="{{img}}", width=250, height=400>
+            {% endfor %}
+            <p>{{movie.title}}</p> {% endcomment %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UzMovie.com| {{movie.title.upper}}</title>
+       
+     </head>
+    <body>
+
+      
+        <div style="display:flex;  align-items:center; justify-content:space-evenly">
+            <div style='250px'>
+                <img src = "{% if movie.banner%}{{movie.banner.url}}
+                {% else %}https://kitobman.uz/staticfiles/assets/img/default_cover.png{%endif%}" width="250px">
+                {% comment %} banner.path -> www.domain.name / 'media' + / +'banner/ image_name.png' {% endcomment %}
+                
+                <p><b>Nomi: </b>{{movie.title}}</p>
+                <p> <small><b>Yili: </b>{{movie.released_year}}</small></p>
+                <p> <small><b>Davomiyligi: </b>{{movie.duration}}</small></p>
+                <p> <small><b>Tili: </b>{{movie.language}}</small></p>
+                <p> <small><b>Ko'rishlar soni: </b>{{movie.views_count}}
+            </div>
+        </div>
+    </body>
+</html>

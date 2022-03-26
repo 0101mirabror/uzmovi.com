@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UzMovie.com | Add new movie</title>
+    </head>
+    <body>
+        <div style="display:flex; align-items: center; justify-content: space-evenly;">
+            <form style="widht:250px" method="post" action="">
+                 
+                <label for="input1">Title</label>
+                <input type="text" name="title"   
+                    placeholder="Bu yerga kino nomini yozing.." 
+                    value="{{data.title}}"  
+                    style="width:100%; height:25px" id="input1"/>
+                {% comment %} {% if errors.title %} <small style="color:red;">{{errors.title}}</small>{% endif %} {% endcomment %}
+                <br>
+                <br>
+
+                <label for="">Released year</label>
+                <input type="number" value="{{data.released_year}}" name="released_year" placeholder="Kino ishlab chiqilgan yil..." style="width:100%; height:25px"/>
+                {% comment %} {% if errors.released_year%} <small style="color:red;">{{errors.released_year}}</small>{% endif %} {% endcomment %}
+                <br>
+                <br>
+
+                <label>Language</label>
+                <input type="text" value="{{data.language}}" name="language" style="width:100%; height:25px"/>
+                <br>
+                <br>
+
+                <label>Duration</label>
+                <input type="text" value="{{data.duration}}" name="duration" style="width:100%; height:25px"/>
+                {% comment %} {%if errors.duration %}<small style="color:red;"> {{errors.duration}}</small>{%endif%} {% endcomment %}
+                <br>
+                <br>
+                
+                <p style="color:#447e9d;font-size:10px;"><span style=" color:#666666">Currently:</span>{{data.source_link}}</p>
+                <label>Source Link</label>
+                <p style="font-size:10px;">Change</p> 
+                <input type="text" value="{{data.source_link}}"  name="source_link" style="width:100%; height:25px"/>
+                {% comment %} {%if errors.source_link %}<small style="color:red;">{{errors.source_link}}</small>{%endif%} {% endcomment %}
+                <br>
+                <br>
+
+                <label>Type</label>
+                <select name="type" value="{{data.type}}"   style="width:100%; height:30px">
+                    <option value="MOVIE">Kinofilm</option>
+                    <option value="TRAILER">Treyler</option>
+                    <option value="SHOW">Shou</option>
+                    <option value="SERIES">Serial</option>
+                </select>
+                {% comment %} {%if errors.type %}<small style="color:red;">{{errors.type}}</small>{%endif%} {% endcomment %}
+                <br>
+                <br>
+                 
+                <p style="color:#447e9d;font-size:10px;"><span style=" color:#666666">Currently:</span>{{data.banner}}</p>
+                <label>Banner</label>
+                <p style="font-size:10px;">Change</p> 
+                <input type="file"  name="banner" style="width:100%; height:25px"/>
+                <br>
+                <br>
+                
+                {% csrf_token %}
+                
+                <label>Slug</label>
+                <input type="text" value="{{data.slug}}" name="slug" style="width:100%; height:25px"/>
+                {% comment %} {%if errors.slug %}<small style ="color:red;">{{errors.slug}}</small>{% endif %} {% endcomment %}
+                <br>
+                <br>
+
+                <label>Category id</label>
+                <input type="text" value="{{data.category_id}}" name="category_id" style="width:100%; height:25px"/>
+                <br>
+                <br>
+
+                <input type="submit" value="Yuborish" style="width:100%;height:30px; background:blue; color:white; border-radius:8px"/>
+            </form>
+                
+        </div>    
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} <!DOCTYPE html>
+<html>
+    <head>
+        <title>Uzmovi.com   </title>
+    </head>
+    <body>
+        <div style="display:flex; align-items:center; justify-content:space-evenly;">
+            <formn style="width:250px" method="post" action="/movies/create">
+                <label for="t_id">Title</label>
+                <input type="text" name="title" id="t_id" required 
+                style="width:100%; height:25px;"/>
+                <br/>
+                <br/>
+
+                <label for="ry_id">Released year</label>
+                <input type="number" name="released_year" id="ry_id" required
+                style="height:25px; width:100%;" />
+                <br/>
+                <br/>
+
+                <label for="l_id">Language</label>
+                <input type="text" name="language" id="l_id" required
+                style="width:100%; height:25px;"/>
+                <br/>
+                <br/>
+
+                <label for="d_id">Duration</label>
+                <input type="text" name="duration" id="d_id" required
+                style="height:25px; width:100%";/>
+                <br/>
+                <br/>
+
+                <label for="t_id">Source link</label>
+                <input type="text" name="source_link" id="t_id" required
+                style="height:25px; width:100%;"/>
+                <br/>
+                <br/>
+
+                <label>Type</label>
+                <select name="type" style="height:25px; width:100%;">
+                    <option value="MOVIE">Kinofilm</option>
+                    <option value="TRAILER">Treyler</option>
+                    <option value="SHOW">Shou</option>
+                    <option value="SERIES">Serial</option>
+                </select>
+                <br/>
+                <br/>
+
+                {% csrf_token %}
+                <label>Banner</label>
+                <input type="file" name="banner" style="height:25px; width:100%;"/> 
+                <br/>
+                <br/>
+
+                <label for="s_id">Slug</label>
+                <input type='text' name="slug" id="s_id"
+                style="height:25px; width:100%;"/>
+                <br/>
+                <br/>
+
+                <label for="ct_id">Category id</label>
+                <input type="text" name="category_id" id="ct_id"
+                style="height:25px; width:100%">
+                <br/>
+                <br/>
+
+                <input type="submit" value="Yuborish" style="width:100%; height:25px; background:blue; color:white;"/>
+
+            </form>
+        </div>
+    </body>
+
+<html> {% endcomment %}
